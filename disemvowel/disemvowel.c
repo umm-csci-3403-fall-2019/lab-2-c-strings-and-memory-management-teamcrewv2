@@ -12,12 +12,17 @@ int nonVowelLengthAllocater(char const *str) {
     char mystring[] = "This is my test string"; //mystring[]
     char *c = mystring;
     int vowel_count = 0;
+
+    int i;
+    i = 0;
   
     while(*c){
         if(strchr(invalid_chars, *c)){
             vowel_count++;
+            // printf("%c\n", mystring[i]);
         }
         c++;
+        i++;
     }
 
     printf("Vowel count: %d\n", vowel_count);
@@ -35,14 +40,19 @@ char *disemvowel(char const *str){
     char *result;
     char const *c = str;
 
-    length = nonVowelLengthAllocater(str);
-    result = (char*) calloc(length+1, sizeof(char));
+    i = 0;
 
-    for(i = 0; i < length; ++i){
-        if(!strchr(invalid_chars, *str)){
+    length = nonVowelLengthAllocater(str);
+    printf("Length: %lu\n", length);
+    result = (char*) calloc(length+1+1+5, sizeof(char));
+
+    while(*c){
+        if(!strchr(invalid_chars, *c)){
             result[i] = str[i];
-            c++;
+            printf("%c\n", str[i]);
         }
+        c++;
+        i++;
     }
 
     result[length] = '\0';
