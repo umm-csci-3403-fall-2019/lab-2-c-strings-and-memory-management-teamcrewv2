@@ -36,19 +36,9 @@ char *disemvowel(char const *str) {
 
     result[len] = '\0';
 
-    printf(result);
-  
-    return result;
+    return (char*)result;
 }
 
-int main(int argc, char *argv[]) {
-    char const the_string[] = "Test test dog";
-    char *t;
 
-    t = disemvowel(the_string);
-
-    free(t);
-
-}
 
 
