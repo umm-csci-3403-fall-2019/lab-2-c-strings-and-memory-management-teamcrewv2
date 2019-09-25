@@ -19,12 +19,3 @@ int main(int argc, char *argv[]) {
   }
  free(line);
 }
-
-// int main(int argc, char *argv[]) {
-//     char const the_string[] = "Test test dog";
-    
-//     char *t;
-//     t = disemvowel(the_string);
-//     free(t);
-
-// }
