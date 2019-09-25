@@ -9,11 +9,11 @@
 
 char *disemvowel(char const *str) {
     const char *invalid_chars = "AEIOUaeiou";
-    char mystring[] = "Test test dog"; //mystring[]
-    char *str_copy = mystring;
+    // char mystring[] = "Test test dog"; //mystring[]
+    char const *str_copy = str;
     int vowel_count = 0;
 
-    int i = 0;
+    size_t i = 0;
     int j = 0;
   
     while(*str_copy){
@@ -23,11 +23,11 @@ char *disemvowel(char const *str) {
         str_copy++;
     }
 
-    int len = strlen(mystring) - vowel_count;
+    int len = strlen(str) - vowel_count;
 
     char *result = (char*) calloc(len+1, sizeof(char));
 
-    for(i=0; i < strlen(mystring); i++){
+    for(i=0; i < strlen(str); i++){
         if(!strchr(invalid_chars, str[i])){
             result[j] = str[i];
             j++;
@@ -50,4 +50,5 @@ int main(int argc, char *argv[]) {
     free(t);
 
 }
+
 
